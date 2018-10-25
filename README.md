@@ -1,2 +1,2 @@
 # Bootcamp
-Notebooks for bootcamps related to Data Science and Machine Learning
+Notebooks containing a variety of  ML projects.
