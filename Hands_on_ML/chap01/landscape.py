@@ -39,5 +39,5 @@ def main():
 	X_new = [[22587]]  # Cyprus' GDP per capita
 	print(model.predict(X_new)) # outputs [[ 5.96242338]]    
 
-if__name__ == '__main__':
+if __name__ == '__main__':
 	main()	
