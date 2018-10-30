@@ -24,17 +24,22 @@ def main():
 	link_2 = 'https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/lifesat/gdp_per_capita.csv'
 	oecd_bli = pd.read_csv(link_1, thousands=',')
 	gdp_per_capita = pd.read_csv(link_2, thousands=',', delimiter='\t', encoding='latin1', na_values='n//a')
+
 	# Preparing the data
 	country_stats = prepare_country_stats(oecd_bli, gdp_per_capita)
 	X = np.c_[country_stats["GDP per capita"]]
 	y = np.c_[country_stats["Life satisfaction"]]
+
 	# Visualize the data
 	country_stats.plot(kind='scatter', x="GDP per capita", y='Life satisfaction')
 	plt.show()
+
 	# Select a linear model
 	model = KNeighborsRegressor(n_neighbors=3)   # model = LinearRegression()
+
 	# Train the model
 	model.fit(X, y)
+
 	# Make a prediction for Cyprus
 	X_new = [[22587]]  # Cyprus' GDP per capita
 	print(model.predict(X_new)) # outputs [[ 5.96242338]]    

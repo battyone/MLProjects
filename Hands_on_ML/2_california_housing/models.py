@@ -11,7 +11,7 @@ def main():
 	lin_reg = LinearRegression()
 	lin_reg.fit(X_train, y_train)
 	
-	print(y_train[1:9])
+	print(y_train[0:10])
 	print(lin_reg.predict(X_train)[0:10])
 
 if __name__ == '__main__':
