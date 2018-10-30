@@ -27,7 +27,7 @@ def load_housing_data(housing_path=HOUSING_PATH):
 	csv_path = os.path.join(housing_path, 'housing.csv')
 	return pd.read_csv(csv_path)
 
-def	split(housing):
+def split(housing):
 	split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
 	for train_idx, test_idx in split.split(housing, housing['income_cat']):
 		strat_train_set = housing.loc[train_idx]
