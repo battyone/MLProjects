@@ -34,3 +34,19 @@ for (i in 1:10) {
 ggplot() +
   aes(m) +
   geom_histogram()
+
+
+m <- c()
+for (i in c(1:26, 28, 30)) {
+  thisClust <- NbClust(seeds %>% 
+                      select(-X1), method = "complete", index = indices[i])$Best.nc %>% 
+           as.data.frame() %>% 
+           slice(1:1) %>% 
+           as.integer()
+  m <- c(m, thisClust)
+  print(paste(i, ":", thisClust, indices[i]))
+}
+ggplot() +
+  aes(m) +
+  geom_histogram() +
+  coord_flip()
