@@ -1,0 +1,37 @@
+---
+title: "tree"
+author: "Amol Deshmukh"
+date: "May 12, 2019"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(tree)
+```
+
+```{r}
+X <- iris %>% select(Petal.Length, Petal.Width)
+y <- iris %>% select(Species)
+```
+
+
+```{r}
+tree.r <- tree(Species ~ Petal.Length + Petal.Width, iris)
+
+plot(tree.r)
+text(tree.r)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
